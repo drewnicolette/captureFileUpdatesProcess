@@ -4,10 +4,11 @@ import os
 import time
 
 def main():
-    path = '/home/drewnicolette/Desktop/updateCatalog/'
-    column_names = ['id','first','last','salary']
+    path = '/mnt/c/Users/DrewNicolette/Desktop/testCatalog/'
+    column_names = ['Id','Firstname','Lastname','Address','City','State','Zip']
     prev_file = 'cdfDataCatalog_prev.csv'
     curr_file = 'cdfDataCatalog_curr.csv'
+    key='Id'
 
     f.checkPath(path)
     f.checkPrevFileExists(path,prev_file)
@@ -19,7 +20,7 @@ def main():
         f.RenameCurrtoPrev(path,curr_file,prev_file)
         os._exit(0)
    
-    c.addResultsFile(path,column_names)
+    c.addResultsFile(path,column_names,key)
     f.movePrevFile(path,prev_file)
     time.sleep(1)
     f.RenameCurrtoPrev(path,curr_file,prev_file)
