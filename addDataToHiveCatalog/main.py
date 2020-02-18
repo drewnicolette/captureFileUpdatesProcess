@@ -4,8 +4,10 @@ import os
 import time
 
 def main():
-    path = '/mnt/c/Users/DrewNicolette/Desktop/testCatalog/'
-    column_names = ['Id','Firstname','Lastname','Address','City','State','Zip']
+    #Full Path and make sure forward slash is at the end!"
+    path = '/mnt/c/Users/DrewNicolette/Desktop/testCatalog/testNew/'
+    #Case sensitive column names!!"
+    column_names = ['Id','First','Last','Add','City','State','Zip','Married']
     prev_file = 'cdfDataCatalog_prev.csv'
     curr_file = 'cdfDataCatalog_curr.csv'
     key='Id'

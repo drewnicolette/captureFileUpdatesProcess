@@ -90,16 +90,26 @@ def RenameCurrtoPrev(path,curr_file,prev_file):
 
 def convertToTabDelimitted(path,file):
     inFile = "".join([path,file])
-    fileSplit = os.path.splitext(file)[0]
+    fileSplit = "".join([os.path.splitext(file)[0],'tar'])
     outFile = "".join([path,fileSplit,".tsv"])
+    headerRow = input("\nDoes your file have a header row? (yes/no): ")
     
-    with open(inFile,'r') as csv_file:
-        csv_reader = csv.reader(csv_file)
-        next(csv_reader)
-        for line in csv_reader:
-            with open(outFile,'a') as new_txt:
-                txt_writer = csv.writer(new_txt, delimiter = '\t')
-                txt_writer.writerow(line)
+    if headerRow == 'yes':
+        with open(inFile,'r') as csv_file:
+            csv_reader = csv.reader(csv_file)
+            next(csv_reader)
+            for line in csv_reader:
+                with open(outFile,'a') as new_txt:
+                    txt_writer = csv.writer(new_txt, delimiter = '\t')
+                    txt_writer.writerow(line)
+    elif headerRow == 'no':
+        with open(inFile,'r') as csv_file:
+            csv_reader = csv.reader(csv_file)
+            
+            for line in csv_reader:
+                with open(outFile,'a') as new_txt:
+                    txt_writer = csv.writer(new_txt, delimiter = '\t')
+                    txt_writer.writerow(line)
 
 def checkIfTSVExists(path,file):
     filesInDir = [file for file in os.listdir(path)]
@@ -108,7 +118,7 @@ def checkIfTSVExists(path,file):
     
     #Change the incoming prev file to tsv extension
     inFile = "".join([path,file])
-    fileSplit = os.path.splitext(file)[0]
+    fileSplit = "".join([os.path.splitext(file)[0],'tar'])
     outFile = "".join([path,fileSplit,".tsv"])
 
     dateTime = datetime.now()
