@@ -14,16 +14,16 @@ Example: pip3 install Hashlib
 
 How to RUN THE FIRST TIME:
 1. Clone the repo
-2. Edit the main file:
-2a. Change the path parameter to point to the directory where you want to keep a _curr file and a _prev file
-2b. Change the column_names parameter to the columns of your csv file   
-2c. Change the key parameter to the key of your file
-3. All you need to do now is create a .csv file in the directory you pointed to in step 2a. and name it the same as your curr_file parameter in the main.py file...
-Note: Using excel you can add/edit data to it or if you already have an excel file, save it as a .csv in that directory
-Note: Make sure file is closed and not open... You will get a permissions error if it is open
-4. Once those you added that file to that directory, run the main.py file (python3 main.py)
-4a. It will prompt you to create a prev file and certain directories because it is your first time running and you won't have a previous file or achive directories..
-So say yes to all the prompts!
+2. Edit the main file:  
+  2a. Change the path parameter to point to the directory where you want to keep a _curr file and a _prev file  
+  2b. Change the column_names parameter to the columns of your csv file   
+  2c. Change the key parameter to the key of your file
+3. All you need to do now is create a .csv file in the directory you pointed to in step 2a. and name it the same as your curr_file parameter in the main.py file...  
+Note: Using excel you can add/edit data to it or if you already have an excel file, save it as a .csv in that directory  
+Note: Make sure file is closed and not open... You will get a permissions error if it is open  
+4. Once those you added that file to that directory, run the main.py file (python3 main.py)  
+  4a. It will prompt you to create a prev file and certain directories because it is your first time running and you won't have a previous file or achive directories..  
+  4b. SO SAY YES TO ALL THE PROMPTS
 5. The program will run...
 
 
